@@ -1,0 +1,41 @@
+
+  
+     
+
+      	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form"  [formGroup]="this.ordersService.form">
+					
+					<span class="login100-form-title p-b-48">
+						<img src="./../../assets/images/genex.jpg" width="300">
+					</span>
+					<span class="login100-form-title p-b-26" style="font-family: 'Montserrat', sans-serif; font-weight: bold;color:#A5343C;font-size:30px">
+						Daily Web Check
+						</span>
+						<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" formControlName="customerName" placeholder="Name  &  Surname">
+						<span class="focus-input100" ></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" >
+						
+						<input class="input100" type="text"formControlName="companyName" placeholder="Company Name">
+						<span class="focus-input100" ></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" (click)="onSubmit()" routerLink="/questions" >
+								Login
+							</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	

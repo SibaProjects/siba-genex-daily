@@ -1,0 +1,67 @@
+
+
+<div class="table-responsive">
+    <table class="table table-borderless table-dark">
+    <thead>
+        <tr>
+            <!-- <th scope="col"> #</th> -->
+          <th scope="col">Client Name</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Were you able to log into the insights platform ?</th>
+          <th scope="col">How would you rate the load speed on the Genex Insights platform?</th>
+          <th scope="col">Testing Demographic Question</th>
+          <th scope="col">Did the charts load in the dashboard?</th>
+          <th scope="col">How would you rate the load speed for Analytic charts?</th>
+          <th scope="col"> Do you want to generate a Resolve Alert?</th>
+        </tr>
+      </thead>
+  
+    <tbody>
+      <tr *ngFor="let order of coffeeOrders">
+        <td>
+          {{ order.payload.doc.data().customerName }}
+        </td>
+        <td>
+          {{ order.payload.doc.data().companyName }}
+        </td>
+        <td>
+            {{ order.payload.doc.data().questionOne }}
+        </td>
+        <td>
+          {{ order.payload.doc.data().questionTwo }}
+        </td>
+         <td>
+           {{ order.payload.doc.data().questionThree }}
+          </td>
+          <td>
+            {{ order.payload.doc.data().questionFour }}
+          </td>
+          <td>
+            {{ order.payload.doc.data().questionFive }}
+          </td>
+          <td>
+            {{ order.payload.doc.data().questionSix }}
+          </td>
+                            
+          <span *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
+            {{ coffee }}
+          </span>
+        
+        <!-- <td
+          [hidden]="order.payload.doc.data().completed"
+          (click)="markCompleted(order)"
+        > <span *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
+            {{ coffee }}
+          </span>
+          <i class="material-icons">check</i>
+        </td> -->
+        <td
+          [hidden]="order.payload.doc.data().completed"
+          (click)="deleteOrder(order)"
+        >
+          <i class="material-icons">Delete User Data</i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

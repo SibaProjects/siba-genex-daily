@@ -1,0 +1,113 @@
+ <mat-vertical-stepper [linear] = "isLinear" #stepper>
+    <mat-step [stepControl] = "firstFormGroup">
+       <form [formGroup] = "this.ordersService.form">
+          <ng-template matStepLabel style="font-family: 'Montserrat', sans-serif; font-weight: bold;color:#A5343C;font-size:30px">Were you able to log into the insights platform ?</ng-template>
+         
+         <mat-radio-group aria-label="Select an option" formControlName = "questionOne" required >
+             <mat-radio-button value="Yes"> Yes  </mat-radio-button> 
+            <mat-radio-button value="No">No</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>  
+             
+          </mat-radio-group> 
+        
+          
+          <div>
+            <button mat-raised-button color="warn" matStepperNext>Next</button>
+
+          </div>
+       </form>
+    </mat-step>
+    <mat-step [stepControl] = "secondFormGroup">
+       <form [formGroup] = "this.ordersService.form">
+          <ng-template matStepLabel> How would you rate the load speed on the Genex Insights platform?</ng-template>
+          <mat-list>
+            <mat-list-item>0  - Extremely Slowly </mat-list-item>
+            <mat-list-item>10 - Extremely Quickly </mat-list-item>
+           </mat-list>
+          <br>
+          
+          <mat-slider
+          thumbLabel
+          [displayWith]=""
+          tickInterval="1000"
+          formControlName = "questionTwo"
+          min="0"
+          max="10">
+        </mat-slider>
+        
+          <div>
+           <button mat-button color="primary" matStepperPrevious>Back</button> 
+            <button mat-raised-button color="warn" matStepperNext>Next</button>
+          </div>
+       </form>
+    </mat-step>
+    <mat-step [stepControl] = "thirdFormGroup">
+        <form [formGroup] = "this.ordersService.form">
+            <ng-template matStepLabel> Testing Demographic Question</ng-template>
+         
+            <mat-form-field >
+              <textarea matInput placeholder="test" formControlName = "questionThree" required></textarea>
+            </mat-form-field>
+            <div>
+              <button mat-button color="primary" matStepperPrevious>Back</button> 
+              <button mat-raised-button color="warn"  matStepperNext>Next</button>
+            </div>
+          </form>
+      </mat-step> 
+      <mat-step [stepControl] = "fourthFormGroup">
+          <form [formGroup] = "this.ordersService.form">
+              <ng-template matStepLabel>  Did the charts load in the dashboard?</ng-template>
+              <mat-radio-group aria-label="Select an option" formControlName = "questionFour" required >
+                <mat-radio-button value="Yes"> Yes  </mat-radio-button> 
+               <mat-radio-button value="No">No</mat-radio-button>
+                
+             </mat-radio-group> 
+              <div>
+                <button mat-button  color="primary" matStepperPrevious>Back</button> 
+                <button mat-raised-button  color="warn" matStepperNext>Next</button>
+              </div>
+            </form>
+        </mat-step> 
+        <mat-step [stepControl] = "fifthFormGroup">
+            <form [formGroup] = "this.ordersService.form">
+                <ng-template matStepLabel>How would you rate the load speed for Analytic charts?</ng-template>
+                <mat-list>
+                  <mat-list-item>0  - Extremely Slowly </mat-list-item>
+                  <mat-list-item>10 - Extremely Quickly </mat-list-item>
+                 </mat-list>
+                <br>
+                
+                <mat-slider
+                thumbLabel
+                [displayWith]=""
+                tickInterval="1000"
+                formControlName = "questionFive"
+                min="0"
+                max="10">
+              </mat-slider>
+                <div>
+                  <button mat-button  color="primary" matStepperPrevious>Back</button> 
+                  <button mat-raised-button color="warn" matStepperNext>Next</button>
+                </div>
+              </form>
+          </mat-step> 
+          <mat-step [stepControl] = "sixthFormGroup">
+              <form [formGroup] = "this.ordersService.form">
+                  <ng-template matStepLabel> Do you want to generate a Resolve Alert?</ng-template>
+                  <mat-radio-group aria-label="Select an option" formControlName = "questionSix" required >
+                    <mat-radio-button value="Yes"> Yes  </mat-radio-button> 
+                   <mat-radio-button value="No">No</mat-radio-button>
+                    
+                 </mat-radio-group>
+                  <div>
+                    <button mat-button  color="primary" matStepperPrevious>Back</button> 
+
+                    <br>
+                    <br>
+                    <button mat-fab color="accent" (click)="onSubmit()" routerLink="/logout">Submit</button>
+                  </div>
+                </form>
+            </mat-step> 
+ 
+ </mat-vertical-stepper> 
+
