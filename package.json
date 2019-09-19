@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
@@ -26,19 +27,25 @@
     "angular-in-memory-web-api": "^0.9.0",
     "bootstrap": "^4.3.1",
     "bs-stepper": "^1.7.0",
+    "express": "^4.17.1",
     "firebase": "^6.6.1",
     "hammerjs": "^2.0.8",
     "mdl-stepper": "^1.1.6",
     "ngx-stepper": "^1.1.6",
+    "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
+  "engines": {
+    "node": "6.11.0",
+    "npm": "3.10.10"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.0",
-    "@angular/cli": "~8.2.0",
-    "@angular/compiler-cli": "~8.2.0",
+    "@angular/cli": "^8.3.5",
+    "@angular/compiler-cli": "^8.2.7",
     "@angular/language-service": "~8.2.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
@@ -46,6 +53,7 @@
     "angular-cli-ghpages": "^0.6.0",
     "angular-cli-github-pages": "^0.2.0",
     "codelyzer": "^5.0.0",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
